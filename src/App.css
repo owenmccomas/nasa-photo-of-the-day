@@ -1,5 +1,11 @@
+body {
+  background-color: #0c1e3f;
+}
+
 .App {
   text-align: center;
+  background-color: #4b0082;
+  /* background-color: #2c0703; */
 }
 
 .App-logo {
@@ -34,5 +40,74 @@
   }
   to {
     transform: rotate(360deg);
+  } 
+}
+ /* additions below */
+ body {
+  font-family: Helvetica, sans-serif;
+  background-color: #fff0f5;
+  color: #0c1e3f;
+}
+
+h1, h3 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+a {
+  color: #0c1e3f;
+  text-decoration: none;
+}
+
+p {
+  margin: 20px;
+  font-size: 20px;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+ 
+.hdurl {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.explanation {
+  position: absolute;
+  top: 135px;
+  right: 20px;
+  width: 400px;
+  min-height: calc(100vh - 80px);
+  height: 100%;
+  overflow: hidden;
+  margin-right: 120px;
+}
+
+
+@media (max-width: 800px) {
+  .explanation {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    height: auto;
+    top: calc(var(--image-top) + 20px);
   }
 }
