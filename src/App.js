@@ -1,6 +1,41 @@
 import React, { useState, useEffect, useRef, setImageTop }from "react";
 import "./App.css";
 import axios from 'axios';
+import styled from 'styled-components'
+
+// styled componenets
+const Wrapper = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+`;
+const Explanation = styled.p`
+  position: absolute;
+  margin: 20px;
+  font-size: 20px;
+  top: 132px;
+  right: 20px;
+  width: 400px;
+  min-height: calc(100vh - 80px);
+  height: 100%;
+  overflow: hidden;
+  margin-right: 100px;
+`;
+const PageTitle = styled.h1`
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-weight: 600;
+`;
+const NasaTitle = styled.h3`
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 30px;
+`;
+const HdReminder = styled.h3`
+ margin-top: 10px;
+  font-size: 16px;
+`;
+
 
 function App() {
   const [nasaData, setNasaData] = useState({})
@@ -21,13 +56,13 @@ function App() {
       .catch(err => console.log(err));}
 
   return (
-    <div className="container">
-      <h1>NASA Photo of the Day</h1>
-      <h3 className="title">-{nasaData.title}-</h3>
+    <Wrapper>
+      <PageTitle>NASA Photo of the Day</PageTitle>
+      <NasaTitle>-{nasaData.title}-</NasaTitle>
       <a href={nasaData.hdurl}><img src={nasaData.url} alt='nasa photo of the day' ref={imageRef}/></a>
-      <h3 className="hdurl">Click image for an HD version</h3>
-      <div className='explanation'><p>{nasaData.explanation}</p></div>
-    </div>
+      <HdReminder>Click image for an HD version</HdReminder>
+      <div><Explanation>{nasaData.explanation}</Explanation></div>
+    </Wrapper>
   );
 }
 
